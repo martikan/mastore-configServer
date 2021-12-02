@@ -1,0 +1,16 @@
+server:
+  port: ${PORT:8082}
+
+spring:
+  application:
+    name: api-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/martikan/mastore-configurations.git
+          username: ${GIT_CONFIG_USERNAME}
+          password: ${GIT_CONFIG_TOKEN}
+          clone-on-start: true
+          default-label: main
+          ignore-local-ssh-settings: true
